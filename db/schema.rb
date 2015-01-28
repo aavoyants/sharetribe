@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150121130521) do
+ActiveRecord::Schema.define(:version => 20150128113129) do
 
   create_table "auth_tokens", :force => true do |t|
     t.string   "token"
@@ -606,15 +606,16 @@ ActiveRecord::Schema.define(:version => 20150121130521) do
   add_index "payment_rows", ["payment_id"], :name => "index_payment_rows_on_payment_id"
 
   create_table "payment_settings", :force => true do |t|
-    t.boolean  "active",                                :null => false
-    t.integer  "community_id",                          :null => false
-    t.string   "payment_gateway",         :limit => 64
-    t.string   "payment_process",         :limit => 64
+    t.boolean  "active",                                      :null => false
+    t.integer  "community_id",                                :null => false
+    t.string   "payment_gateway",               :limit => 64
+    t.string   "payment_process",               :limit => 64
     t.integer  "commission_from_seller"
     t.integer  "minimum_price_cents"
-    t.integer  "confirmation_after_days",               :null => false
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.integer  "minimum_transaction_fee_cents"
+    t.integer  "confirmation_after_days",                     :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   add_index "payment_settings", ["community_id"], :name => "index_payment_settings_on_community_id"
