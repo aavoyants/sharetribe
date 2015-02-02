@@ -23,7 +23,7 @@ module PaypalService::Store::PaypalAccount
   )
 
   PaypalAccountUpdate = EntityUtils.define_builder(
-    [:active, :to_bool],
+    [:active, one_of: [true, false, nil]],
     [:email, :string],
     [:payer_id, :string],
     [:order_permission_verification_code, :string],
