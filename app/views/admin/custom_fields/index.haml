@@ -139,6 +139,23 @@
         = icon_tag("directup", ["icon-fix disabled"])
         = icon_tag("directdown", ["icon-fix disabled"])
 
+    .row
+      .col-5
+        %span.custom-fields-mobile-list-title.hidden-tablet
+          = t("admin.custom_fields.index.field_title")
+        Pick up date
+      .col-5
+        %span.custom-fields-mobile-list-title.hidden-tablet
+          = t("admin.custom_fields.index.field_type")
+        %div
+          Date
+        %div.custom-fields-details
+      .col-2
+        = icon_tag("edit", ["icon-fix disabled"])
+        = icon_tag("cross", ["icon-fix disabled"])
+        = icon_tag("directup", ["icon-fix disabled"])
+        = icon_tag("directdown", ["icon-fix disabled"])
+
     #custom-field-ajax-status
       .ajax-notification.ajax-notice.custom-field-ajax-status-message#custom-field-ajax-saving
         .ajax-icon{:class => icon_class("loading")}

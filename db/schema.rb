@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150121130521) do
+ActiveRecord::Schema.define(:version => 20150204124218) do
 
   create_table "auth_tokens", :force => true do |t|
     t.string   "token"
@@ -491,6 +491,8 @@ ActiveRecord::Schema.define(:version => 20150121130521) do
     t.string   "currency"
     t.string   "quantity"
     t.boolean  "deleted",             :default => false
+    t.datetime "pickup_date"
+    t.datetime "pickup_date_until"
   end
 
   add_index "listings", ["listing_type_old"], :name => "index_listings_on_listing_type"

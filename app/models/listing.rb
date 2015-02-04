@@ -35,6 +35,8 @@
 #  currency            :string(255)
 #  quantity            :string(255)
 #  deleted             :boolean          default(FALSE)
+#  pickup_date         :datetime
+#  pickup_date_until   :datetime
 #
 # Indexes
 #
