@@ -567,6 +567,21 @@ function initialize_new_listing_form(
   minimum_price_message,
   numeric_field_names) {
 
+  $('.listing_pickup_time1_select').change(
+    function() {
+      var hours_until = parseFloat( $('#listing_pickup_date_4i').find('option:selected').val() );
+      var minutes_until = parseFloat( $('#listing_pickup_date_5i').find('option:selected').val() ) + 30;
+
+      if (minutes_until >= 60) {
+        hours_until += 1;
+        minutes_until -= 60;
+      }
+
+      $('#listing_pickup_date_until_4i [value="' + hours_until.toString() + '"]').attr('selected', 'selected');
+      $('#listing_pickup_date_until_5i [value="' + minutes_until + '"]').attr('selected', 'selected');
+    }
+  );
+
   $('#help_valid_until_link').click(function() { $('#help_valid_until').lightbox_me({centered: true, zIndex: 1000000}); });
   $('input.title_text_field:first').focus();
 
