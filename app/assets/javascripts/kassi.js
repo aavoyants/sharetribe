@@ -577,6 +577,11 @@ function initialize_new_listing_form(
         minutes_until -= 60;
       }
 
+      if ( (minutes_until + (hours_until * 60)) >= 1440 ) {
+        hours_until = 23;
+        minutes_until = 50;       
+      }
+
       $('#listing_pickup_date_until_4i [value="' + hours_until.toString() + '"]').attr('selected', 'selected');
       $('#listing_pickup_date_until_5i [value="' + minutes_until + '"]').attr('selected', 'selected');
     }
