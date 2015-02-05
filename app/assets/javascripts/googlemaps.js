@@ -78,6 +78,15 @@ function timed_input_on_route(){
   );
 }
 
+function initAutocompleteLocation() {
+  var input = document.getElementById('listing_origin');
+  var autocomplete = new google.maps.places.Autocomplete(input, { types: ['geocode'] });
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    timed_input(input);
+  });
+}
+
 function googlemapMarkerInit(canvas,n_prefix,n_textfield,draggable,community_location_lat,community_location_lon,address) {
   prefix = n_prefix;
   textfield = n_textfield;

@@ -3,7 +3,7 @@
 - required_class = (required ? "required" : "")
 
 = form.label :origin, title, :class => "input"
-= form.text_field :origin, :class => "text_field #{required_class}", :onkeyup => "timed_input(this)", :value => (origin_loc ? origin_loc.address : nil)
+= form.text_field :origin, :class => "text_field #{required_class}", :value => (origin_loc ? origin_loc.address : nil), autocomplete: 'off'
 = link_to t('listings.index.search_verb'), "javascript:void(0)", :class => "button", :onclick => "timed_input(document.getElementById('listing_origin'))"
 = form.fields_for :origin_loc do |loc|
   = loc.hidden_field :address, :value => origin_loc.address
