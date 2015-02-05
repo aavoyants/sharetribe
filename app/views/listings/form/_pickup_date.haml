@@ -1,8 +1,8 @@
 .inline-label-container
-  = form.label :pickup_date, "Pick up date & time*", :class => "inline"
+  = form.label :pickup_date, t('.pickup_date') + "*", :class => "inline"
   .pickup-date-dropdown
     = date_select(:listing, :pickup_date, {selected: Time.now}, :class => "listing_pickup_date_select")
   .pickup-date-dropdown
     = time_select(:listing, :pickup_date, {minute_step: 10, default: { hour: 19, minute: 0 }}, :class => "listing_pickup_time1_select")
-    until
+    = t('.pickup_date_until')
     = time_select(:listing, :pickup_date_until, {default: { hour: 19, minute: 30 }, minute_step: 10}, :class => "listing_pickup_time2_select")

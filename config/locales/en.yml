@@ -1316,6 +1316,9 @@ en:
         listing_title: "Listing title"
       valid_until:
         valid_until: "Expiration date"
+      pickup_date:
+        pickup_date: "Pick up date & time"
+        pickup_date_until: "until"
       valid_until_radio_buttons:
         for_the_time_being: "For the time being"
       visibility:

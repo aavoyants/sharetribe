@@ -1316,6 +1316,9 @@ de:
         listing_title: "Titel des Eintrags"
       valid_until:
         valid_until: Ablaufdatum
+      pickup_date:
+        pickup_date: "Pick up date & time"
+        pickup_date_until: "bis"
       valid_until_radio_buttons:
         for_the_time_being: Vorläufig
       visibility:
