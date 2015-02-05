@@ -1333,6 +1333,10 @@ en:
       help_share_type_title: "Type of the offer or request"
       help_tags_title: Tags
       help_valid_until_title: "Expiration date"
+      help_pickup_date_title: "Pickup date"
+      help_price_title: "Price"
+      help_description_title: "Detailed description"
+      help_image_title: "Image"
     index:
       all_categories: "All categories"
       all_offer_types: "All offer types"

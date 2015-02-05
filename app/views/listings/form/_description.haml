@@ -1,2 +1,3 @@
 = form.label :description, t('.detailed_description'), :class => "input"
+= link_to t('common.what_is_this'), "#", :tabindex => "-1", :id => "help_description_link", :class => "label-info"
 = form.text_area(:description, :maxlength => "5000", :class => "listing_description_textarea")

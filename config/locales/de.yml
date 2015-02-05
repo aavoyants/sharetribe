@@ -1333,6 +1333,10 @@ de:
       help_share_type_title: "Art des Angebots oder der Anfrage"
       help_tags_title: Tags
       help_valid_until_title: Ablaufdatum
+      help_pickup_date_title: "Pickup date"
+      help_price_title: "Price"
+      help_description_title: "Detailed description"
+      help_image_title: "Image"
     index:
       all_categories: "Alle Kategorien"
       all_offer_types: "Alle Angebote"

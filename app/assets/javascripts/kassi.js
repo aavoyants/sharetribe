@@ -608,6 +608,10 @@ function initialize_new_listing_form(
   );
 
   $('#help_valid_until_link').click(function() { $('#help_valid_until').lightbox_me({centered: true, zIndex: 1000000}); });
+  $('#help_pickup_date_link').click(function() { $('#help_pickup_date').lightbox_me({centered: true, zIndex: 1000000}); });
+  $('#help_price_link').click(function() { $('#help_price').lightbox_me({centered: true, zIndex: 1000000}); });
+  $('#help_description_link').click(function() { $('#help_description').lightbox_me({centered: true, zIndex: 1000000}); });
+  $('#help_image_link').click(function() { $('#help_image').lightbox_me({centered: true, zIndex: 1000000}); });
   $('input.title_text_field:first').focus();
 
   form_id = (listing_id == "false") ? "#new_listing" : ("#edit_listing_" + listing_id);

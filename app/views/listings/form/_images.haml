@@ -1,4 +1,5 @@
 = form.label :image, t('.image'), :class => "input"
+= link_to t('common.what_is_this'), "#", :tabindex => "-1", :id => "help_image_link", :class => "label-info"
 
 .listing-images#image-uploader-container
   %script{type: "text/template", class: "template", id: "new-image-tmpl"}

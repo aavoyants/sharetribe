@@ -1,5 +1,6 @@
 .inline-label-container
   = form.label :pickup_date, t('.pickup_date') + "*", :class => "inline"
+  = link_to t('common.what_is_this'), "#", :tabindex => "-1", :id => "help_pickup_date_link", :class => "label-info"
   .pickup-date-dropdown
     = date_select(:listing, :pickup_date, {selected: Time.now}, :class => "listing_pickup_date_select")
   .pickup-date-dropdown
