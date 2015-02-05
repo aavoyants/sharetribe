@@ -552,6 +552,36 @@ function display_listing_form(selected_attributes, locale) {
   });
 }
 
+function to_string(val) {
+  val = val.toString();
+  var str_len = val.length;
+  for (var i = str_len; i < 2; i++) {
+    val = '0' + val;
+  };
+  return val;
+}
+
+function change_pickup_until_time(minutes_until, hours_until) {
+  if (minutes_until >= 60) {
+    hours_until += 1;
+    minutes_until -= 60;
+  };
+
+  if ( (minutes_until + (hours_until * 60)) >= 1440 ) {
+    hours_until = 23;
+    minutes_until = 50;       
+  };
+
+  $('#listing_pickup_date_until_4i [value="' + to_string(hours_until) + '"]').attr('selected', 'selected');
+  $('#listing_pickup_date_until_5i [value="' + to_string(minutes_until) + '"]').attr('selected', 'selected');
+}
+
+function change_expiration_time(minutes_until, hours_until) {
+  if (hours_until < 0) { hours_until = 0; };
+  $('#listing_valid_until_4i [value="' + to_string(hours_until) + '"]').attr('selected', 'selected');
+  $('#listing_valid_until_5i [value="' + to_string(minutes_until) + '"]').attr('selected', 'selected');
+}
+
 // Initialize the actual form fields
 function initialize_new_listing_form(
   fileDefaultText,
@@ -570,20 +600,10 @@ function initialize_new_listing_form(
   $('.listing_pickup_time1_select').change(
     function() {
       var hours_until = parseFloat( $('#listing_pickup_date_4i').find('option:selected').val() );
-      var minutes_until = parseFloat( $('#listing_pickup_date_5i').find('option:selected').val() ) + 30;
-
-      if (minutes_until >= 60) {
-        hours_until += 1;
-        minutes_until -= 60;
-      }
-
-      if ( (minutes_until + (hours_until * 60)) >= 1440 ) {
-        hours_until = 23;
-        minutes_until = 50;       
-      }
-
-      $('#listing_pickup_date_until_4i [value="' + hours_until.toString() + '"]').attr('selected', 'selected');
-      $('#listing_pickup_date_until_5i [value="' + minutes_until + '"]').attr('selected', 'selected');
+      var minutes_until = parseFloat( $('#listing_pickup_date_5i').find('option:selected').val() );
+      
+      change_pickup_until_time(minutes_until + 30, hours_until);
+      change_expiration_time(minutes_until, hours_until - 2);
     }
   );
 
