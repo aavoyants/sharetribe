@@ -17,6 +17,12 @@ GIT
     paypal-sdk-permissions (1.96.3)
       paypal-sdk-core (~> 0.3.0)
 
+GIT
+  remote: git://github.com/servtag/jquery-datetimepicker-rails.git
+  revision: 24ec785affa2ed508a2e2b7d5119faac207321da
+  specs:
+    jquery-datetimepicker-rails (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -71,6 +77,10 @@ GEM
     braintree (2.30.0)
       builder (>= 2.0.0)
     builder (3.0.4)
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
     capybara (2.2.1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -94,6 +104,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    columnize (0.9.0)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -127,7 +138,10 @@ GEM
     currencies (0.4.2)
     dalli (2.6.4)
     database_cleaner (0.9.1)
+    date_time_attribute (0.1.2)
+      activesupport (>= 3.0.0)
     debug_inspector (0.0.2)
+    debugger-linecache (1.2.0)
     delayed_job (3.0.5)
       activesupport (~> 3.0)
     delayed_job_active_record (0.3.3)
@@ -488,6 +502,7 @@ DEPENDENCIES
   asset_sync
   aws-sdk
   braintree
+  byebug
   capybara
   coffee-rails (~> 3.2.2)
   compass-rails
@@ -498,6 +513,7 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
+  date_time_attribute
   delayed_job (~> 3.0.5)
   delayed_job_active_record
   delayed_paperclip
@@ -512,6 +528,7 @@ DEPENDENCIES
   guard-rspec
   haml
   i18n-tasks (~> 0.6.2)
+  jquery-datetimepicker-rails!
   jquery-rails (= 2.1.4)
   json (~> 1.8.0)
   kgio (~> 2.8.0)

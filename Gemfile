@@ -19,6 +19,8 @@ gem 'sass-rails'
 gem 'compass-rails'
 
 gem 'jquery-rails', '2.1.4'
+gem "date_time_attribute"
+gem 'jquery-datetimepicker-rails', git: 'git://github.com/servtag/jquery-datetimepicker-rails.git'
 
 # Bundle the extra gems:
 
@@ -99,6 +101,7 @@ group :development do
   gem 'annotate'
   gem 'zeus', '0.15.1'
   gem 'i18n-tasks', '~> 0.6.2'
+  gem 'byebug'
 end
 
 group :test do

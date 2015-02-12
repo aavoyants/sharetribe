@@ -569,17 +569,41 @@ function change_pickup_until_time(minutes_until, hours_until) {
 
   if ( (minutes_until + (hours_until * 60)) >= 1440 ) {
     hours_until = 23;
-    minutes_until = 50;       
+    minutes_until = 50;
   };
 
-  $('#listing_pickup_date_until_4i [value="' + to_string(hours_until) + '"]').attr('selected', 'selected');
-  $('#listing_pickup_date_until_5i [value="' + to_string(minutes_until) + '"]').attr('selected', 'selected');
+  $('#listing_pickup_date_until_time').val( to_string(hours_until) + ':' + to_string(minutes_until) );
 }
 
 function change_expiration_time(minutes_until, hours_until) {
   if (hours_until < 0) { hours_until = 0; };
-  $('#listing_valid_until_4i [value="' + to_string(hours_until) + '"]').attr('selected', 'selected');
-  $('#listing_valid_until_5i [value="' + to_string(minutes_until) + '"]').attr('selected', 'selected');
+  $('#listing_valid_until_time').val( to_string(hours_until) + ':' + to_string(minutes_until) );
+}
+
+function initDateTimePickers() {
+  // only date
+  $('.date_field').datetimepicker({
+    timepicker: false,
+    format: 'Y-m-d',
+    minDate: 0
+  });
+
+  // only time
+  $('.time_field').datetimepicker({
+    datepicker: false,
+    format: 'H:i',
+    step: 10,
+    minTime: 0,
+    onSelectTime:function(ct, $i){
+      if ($i.attr('id') == 'listing_pickup_date_time') {
+        var hours_until = parseFloat( ct.dateFormat('H') );
+        var minutes_until = parseFloat( ct.dateFormat('i') );
+
+        change_pickup_until_time(minutes_until + 30, hours_until);
+        change_expiration_time(minutes_until, hours_until - 2);
+      };
+    }
+  });
 }
 
 // Initialize the actual form fields
@@ -597,22 +621,14 @@ function initialize_new_listing_form(
   minimum_price_message,
   numeric_field_names) {
 
-  $('.listing_pickup_time1_select').change(
-    function() {
-      var hours_until = parseFloat( $('#listing_pickup_date_4i').find('option:selected').val() );
-      var minutes_until = parseFloat( $('#listing_pickup_date_5i').find('option:selected').val() );
-      
-      change_pickup_until_time(minutes_until + 30, hours_until);
-      change_expiration_time(minutes_until, hours_until - 2);
-    }
-  );
-
   $('#help_valid_until_link').click(function() { $('#help_valid_until').lightbox_me({centered: true, zIndex: 1000000}); });
   $('#help_pickup_date_link').click(function() { $('#help_pickup_date').lightbox_me({centered: true, zIndex: 1000000}); });
   $('#help_price_link').click(function() { $('#help_price').lightbox_me({centered: true, zIndex: 1000000}); });
   $('#help_description_link').click(function() { $('#help_description').lightbox_me({centered: true, zIndex: 1000000}); });
   $('#help_image_link').click(function() { $('#help_image').lightbox_me({centered: true, zIndex: 1000000}); });
   $('input.title_text_field:first').focus();
+
+  initDateTimePickers();
 
   form_id = (listing_id == "false") ? "#new_listing" : ("#edit_listing_" + listing_id);
 

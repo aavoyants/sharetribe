@@ -3,4 +3,6 @@
     = form.label :valid_until, t('.valid_until') + "*", :class => "inline"
     = link_to t('common.what_is_this'), "#", :tabindex => "-1", :id => "help_valid_until_link", :class => "label-info"
     .valid-until-dropdown
-      = datetime_select(:listing, :valid_until, {minute_step: 10, selected: Time.now, default: { hour: 17, minute: 0 }}, :class => "listing_date_select")
+      = text_field :listing, :valid_until_date, :class => "price-title-field date_field", value: default_date_value(form.object, :valid_until), readonly: true
+      \–
+      = text_field :listing, :valid_until_time, :class => "price-field time_field", value: default_time_value(form.object, :valid_until, '17:00'), readonly: true

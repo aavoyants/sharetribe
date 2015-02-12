@@ -57,6 +57,8 @@ class Listing < ActiveRecord::Base
   include ActionView::Helpers::TranslationHelper
   include Rails.application.routes.url_helpers
 
+  date_time_attribute :valid_until, :pickup_date, :pickup_date_until
+
   belongs_to :author, :class_name => "Person", :foreign_key => "author_id"
 
   has_many :listing_images, :dependent => :destroy
@@ -98,7 +100,7 @@ class Listing < ActiveRecord::Base
   VALID_VISIBILITIES = ["this_community", "all_communities"]
   VALID_PRIVACY_OPTIONS = ["private", "public"]
 
-  before_validation :set_valid_until_time
+  # before_validation :set_valid_until_time
   before_save :set_community_visibilities
 
   validates_presence_of :author_id
@@ -125,7 +127,7 @@ class Listing < ActiveRecord::Base
   validates_inclusion_of :visibility, :in => VALID_VISIBILITIES
   validates_presence_of :category
   validates_presence_of :transaction_type
-  validates_inclusion_of :valid_until, :allow_nil => :true, :in => DateTime.now..DateTime.now + 7.months
+  # validates_inclusion_of :valid_until, :allow_nil => :true, :in => DateTime.now..DateTime.now + 7.months
   validates_numericality_of :price_cents, :only_integer => true, :greater_than_or_equal_to => 0, :message => "price must be numeric", :allow_nil => true
 
   def set_community_visibilities

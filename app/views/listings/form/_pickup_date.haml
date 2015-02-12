@@ -2,8 +2,9 @@
   = form.label :pickup_date, t('.pickup_date') + "*", :class => "inline"
   = link_to t('common.what_is_this'), "#", :tabindex => "-1", :id => "help_pickup_date_link", :class => "label-info"
   .pickup-date-dropdown
-    = date_select(:listing, :pickup_date, {selected: Time.now}, :class => "listing_pickup_date_select")
+    = text_field :listing, :pickup_date_date, :class => "price-title-field date_field", value: default_date_value(form.object, :pickup_date), readonly: true
   .pickup-date-dropdown
-    = time_select(:listing, :pickup_date, {minute_step: 10, default: { hour: 19, minute: 0 }}, :class => "listing_pickup_time1_select")
+    = text_field :listing, :pickup_date_time, :class => "price-field time_field", value: default_time_value(form.object, :pickup_date, '19:00'), readonly: true
     = t('.pickup_date_until')
-    = time_select(:listing, :pickup_date_until, {default: { hour: 19, minute: 30 }, minute_step: 10}, :class => "listing_pickup_time2_select")
+    = text_field :listing, :pickup_date_until_date, :class => "price-title-field time_field", value: default_date_value(form.object, :pickup_date_until), readonly: true, style: "display: none;"
+    = text_field :listing, :pickup_date_until_time, :class => "price-field time_field", value: default_time_value(form.object, :pickup_date_until, '19:30'), readonly: true

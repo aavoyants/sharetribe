@@ -1,4 +1,11 @@
 module ListingsHelper
+  def default_date_value(obj, attrib)
+    obj.new_record? ? Time.current.to_date : obj[attrib].strftime('%Y-%m-%d')
+  end
+
+  def default_time_value(obj, attrib, t)
+    obj.new_record? ? t : obj[attrib].strftime('%H:%M')
+  end
 
   # Class is selected if conversation type is currently selected
   def get_map_tab_class(tab_name)
