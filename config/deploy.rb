@@ -2,7 +2,7 @@ set :application, 'sharetribe'
 set :repo_url, 'git@github.com:aavoyants/sharetribe.git'
 
 
-set :deploy_to, '/home/sharetribe'
+set :deploy_to, '/home/deploy/sharetribe'
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
