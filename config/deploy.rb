@@ -7,12 +7,12 @@ set :deploy_to, '/home/deploy/sharetribe'
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :scm, :git
-set :repository, "git@github.com:aavoyants/sharetribe.git"
-set :branch, "production"
-set :repository_cache, "git_cache"
-set :deploy_via, :remote_cache
-set :ssh_options, { :forward_agent => true }
+# set :scm, :git
+# set :repository, "git@github.com:aavoyants/sharetribe.git"
+# set :branch, "production"
+# set :repository_cache, "git_cache"
+# set :deploy_via, :remote_cache
+# set :ssh_options, { :forward_agent => true }
 
 # set :scm, :git
 
