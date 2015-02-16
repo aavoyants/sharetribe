@@ -9,7 +9,8 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 
 require 'capistrano/rvm'
-set :rvm_type, :system
+
+set :rvm_custom_path, '~/.rvm'
 set :rvm_ruby_version, '2.1.2'
 
 # Includes tasks from other gems included in your Gemfile

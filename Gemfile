@@ -102,6 +102,10 @@ group :development do
   gem 'zeus', '0.15.1'
   gem 'i18n-tasks', '~> 0.6.2'
   gem 'byebug'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 group :test do
@@ -132,7 +136,9 @@ end
 
 gem 'strong_parameters'
 
-gem 'capistrano'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
-gem 'capistrano-rvm'
+group :production do
+  gem 'daemons'
+  # needed for precompiling assets
+  gem 'therubyracer'
+  gem 'execjs'
+end

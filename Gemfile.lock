@@ -147,6 +147,7 @@ GEM
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
     currencies (0.4.2)
+    daemons (1.1.9)
     dalli (2.6.4)
     database_cleaner (0.9.1)
     date_time_attribute (0.1.2)
@@ -257,6 +258,7 @@ GEM
     kgio (2.8.1)
     launchy (2.1.2)
       addressable (~> 2.3)
+    libv8 (3.16.14.7)
     listen (2.7.9)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -391,6 +393,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     recaptcha (0.3.4)
+    ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     riddle (1.5.11)
@@ -462,6 +465,9 @@ GEM
     term-ansicolor (1.3.0)
       tins (~> 1.0)
     terminal-table (1.4.5)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
     thinking-sphinx (3.1.1)
       activerecord (>= 3.1.0)
       builder (>= 2.1.2)
@@ -530,6 +536,7 @@ DEPENDENCIES
   coveralls
   cucumber
   cucumber-rails
+  daemons
   dalli
   database_cleaner
   date_time_attribute
@@ -540,6 +547,7 @@ DEPENDENCIES
   devise-encryptable
   dynamic_form
   email_spec
+  execjs
   factory_girl_rails
   fb-channel-file
   flying-sphinx (~> 1.2.0)
@@ -593,6 +601,7 @@ DEPENDENCIES
   statesman (~> 0.5.0)
   stringex (~> 2.5.2)
   strong_parameters
+  therubyracer
   thinking-sphinx (~> 3.1.1)
   timecop
   truncate_html
