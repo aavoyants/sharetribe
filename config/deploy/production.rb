@@ -7,9 +7,9 @@ set :thinking_sphinx_roles, :app
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+role :app, %w{deploy@178.62.222.49}
+role :web, %w{deploy@178.62.222.49}
+role :db,  %w{deploy@178.62.222.49}
 
 # Extended Server Syntax
 # ======================
