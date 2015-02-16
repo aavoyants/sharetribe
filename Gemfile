@@ -131,3 +131,8 @@ group :development, :test do
 end
 
 gem 'strong_parameters'
+
+gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
