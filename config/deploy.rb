@@ -1,6 +1,6 @@
 set :application, 'sharetribe'
 set :repo_url, 'git@github.com:aavoyants/sharetribe.git'
-
+set :branch, 'production'
 
 set :deploy_to, '/home/deploy/quisine'
 
