@@ -8,10 +8,10 @@ require 'capistrano/deploy'
 require 'capistrano/bundler'
 require 'capistrano/rails'
 
-require 'capistrano/rvm'
+# require 'capistrano/rvm'
 
-set :rvm_custom_path, '~/.rvm'
-set :rvm_ruby_version, '2.1.2'
+# set :rvm_custom_path, '~/.rvm'
+# set :rvm_ruby_version, '2.1.2'
 
 # Includes tasks from other gems included in your Gemfile
 
