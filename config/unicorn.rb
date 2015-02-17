@@ -1,6 +1,13 @@
-worker_processes Integer(ENV["WEB_CONCURRENCY"] || 2)
-timeout 25 # seconds, keep this lower than 30 if deployed to heroku
-preload_app true
+project_name = 'quisine'
+root = "/home/deploy/#{ project_name }/current"
+working_directory root
+pid "#{root}/tmp/pids/unicorn.pid"
+stderr_path "#{root}/log/unicorn.stderr.log"
+stdout_path "#{root}/log/unicorn.stdout.log"
+
+listen "#{root}/tmp/sockets/unicorn.sock"
+worker_processes 2
+timeout 30
 
 before_fork do |server, worker|
 

@@ -9,8 +9,7 @@ namespace :sharetribe do
   end
 
   task :"setup_dev" do
-    # run_rake "db:migrate"
-    run_rake "db:schema:load"
+    run_rake "db:migrate"
     run_rake "test:prepare"
     run_rake "ts:rebuild"
 
