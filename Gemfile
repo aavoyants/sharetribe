@@ -9,11 +9,11 @@ gem 'rails', '3.2.21'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+# group :assets do
   gem 'coffee-rails', "~> 3.2.2"
   gem 'uglifier'
   # gem 'asset_sync'
-end
+# end
 
 gem 'sass-rails'
 gem 'compass-rails'
@@ -136,9 +136,9 @@ end
 
 gem 'strong_parameters'
 
-group :production do
+# group :production do
   gem 'daemons'
   # needed for precompiling assets
   gem 'therubyracer'
   gem 'execjs'
-end
+# end
